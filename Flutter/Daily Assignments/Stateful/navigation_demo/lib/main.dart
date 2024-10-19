@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_demo/second_Screen.dart';
+import 'package:navigation_demo/secondScreen.dart';
+import 'package:navigation_demo/thirdScreen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -7,11 +8,17 @@ void main() {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
+   
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainScreen(),
+    return  MaterialApp(
+      routes: {
+                
+        '/second': (context) =>const Secondscreen(),  
+        '/third': (context) => const Thirdscreen(), 
+      },
+      debugShowCheckedModeBanner: false,
+      home:const MainScreen(),
       
     
     );
@@ -36,19 +43,21 @@ class _MainScreenState extends State<MainScreen> {
       body: Center(
           child: FloatingActionButton(
             onPressed: (){
-              Navigator.of(context).push(
+              /*Navigator.of(context).push(
                MaterialPageRoute(
                 builder:(context){
                   return const Secondscreen();
                 },
                 ),
               );
+              */
+              Navigator.pushNamed(context, "/second");
             },
             backgroundColor: Colors.blue,
             child:const SizedBox(
               height: 30,
               width: 100,
-              child:  Center(child: const Text("Next"))),
+              child:  Center(child:  Text("Next"))),
             
             ),
       ),

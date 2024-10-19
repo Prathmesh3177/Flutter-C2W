@@ -48,9 +48,7 @@ class _MainScreenState extends State<MainScreen> {
                                 fontSize: 25,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white))),
-                    const SizedBox(
-                      height: 5,
-                    ),
+                    
                     Text("Prathmesh",
                         style: GoogleFonts.quicksand(
                             textStyle: const TextStyle(
